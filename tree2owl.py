@@ -15,7 +15,7 @@ if __name__ == "__main__":
     mapping = yaml.safe_load(f)
 
   # extract concepts mapping
-  concepts_mapping = {k:v for m in mapping["concepts"] for k,v in m.items()}
+  #concepts_mapping = {k:v for m in mapping["concepts"] for k,v in m.items()}
   
-  converted = convert(tree_str, concepts_mapping)
+  converted = convert(tree_str, {})
   print(converted)

@@ -8,7 +8,7 @@ from more_itertools import pairwise
 
 NS = rdflib.Namespace("http://example.org/")
 
-def convert(tree_str: str, mapping: Dict[str, str], brackets: str = "()") -> str:
+def convert(tree_str: str, mapping: Dict[str, str], brackets: str = "[]") -> str:
   """
   Convert a parse tree in OWL.
 
@@ -21,9 +21,10 @@ def convert(tree_str: str, mapping: Dict[str, str], brackets: str = "()") -> str
   """
   graph = rdflib.Graph()
   tree = nltk.tree.Tree.fromstring(tree_str, brackets=brackets)
+  tree.chomsky_normal_form()
   
   next_property = NS["next"]
-  graph.add((next_property, RDF.type, OWL.ObjectProperty))
+  graph.add((next_property, RDF.type, OWL.FunctionalProperty))
   
   created_concepts = list()
   
@@ -42,13 +43,17 @@ def convert(tree_str: str, mapping: Dict[str, str], brackets: str = "()") -> str
   
   # extract the productions from the tree
   productions = tree.productions()
+  print(productions)
 
   for production in productions:
     lhs = production.lhs()
     rhs = production.rhs()
   
     # handle lhs
-    lhs_class = mapping[lhs.symbol()]
+    if lhs.symbol() in mapping:
+      lhs_class = mapping[lhs.symbol()]
+    else:
+      lhs_class = f"C_{lhs.symbol()}"
     lhs_rolified = f"R_{lhs_class}"
   
     # rolify lhs_class
@@ -68,7 +73,7 @@ def convert(tree_str: str, mapping: Dict[str, str], brackets: str = "()") -> str
       terminal = rhs[0]
       graph.add((NS[terminal], RDF.type, NS[lhs_class]))
     elif len(rhs) == 2: 
-      rhs_class = map(lambda v: mapping[v.symbol()], rhs)
+      rhs_class = map(lambda v: mapping[v.symbol()] if v.symbol() in mapping else f"C_{v.symbol()}", rhs)
       rhs_1, rhs_2 = tuple(rhs_class)
       rhs_1_rolified, rhs_2_rolified = f"R_{rhs_1}", f"R_{rhs_2}"
   
