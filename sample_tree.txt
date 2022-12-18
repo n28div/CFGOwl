@@ -1,1 +1,0 @@
-(S (N John) (VP (V sees) (N Bill)))
