@@ -1,0 +1,54 @@
+@prefix ns1: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ns1:element_0 a ns1:C%3Amin7 ;
+    ns1:next ns1:element_1 .
+
+ns1:next a owl:FunctionalProperty .
+
+ns1:Ab%3A7 a owl:Class .
+
+ns1:C%3Amin7 a owl:Class .
+
+ns1:Db%3Amaj7 a owl:Class .
+
+ns1:Eb%3Amin7 a owl:Class .
+
+ns1:F%3Amin7 a owl:Class .
+
+ns1:element_1 a ns1:F%3Amin7 ;
+    ns1:next ns1:element_2 .
+
+ns1:element_10 a ns1:C%3Aminmaj7 .
+
+ns1:element_2 a ns1:D%3Ahdim7 ;
+    ns1:next ns1:element_3 .
+
+ns1:element_3 a ns1:G%3A7 ;
+    ns1:next ns1:element_4 .
+
+ns1:element_4 a ns1:C%3Aminmaj7 ;
+    ns1:next ns1:element_5 .
+
+ns1:element_5 a ns1:Eb%3Amin7 ;
+    ns1:next ns1:element_6 .
+
+ns1:element_6 a ns1:Ab%3A7 ;
+    ns1:next ns1:element_7 .
+
+ns1:element_7 a ns1:Db%3Amaj7 ;
+    ns1:next ns1:element_8 .
+
+ns1:element_8 a ns1:D%3Ahdim7 ;
+    ns1:next ns1:element_9 .
+
+ns1:element_9 a ns1:G%3A7 ;
+    ns1:next ns1:element_10 .
+
+ns1:C%3Aminmaj7 a owl:Class .
+
+ns1:D%3Ahdim7 a owl:Class .
+
+ns1:G%3A7 a owl:Class .
+
+
