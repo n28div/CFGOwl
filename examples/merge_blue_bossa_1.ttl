@@ -1,0 +1,341 @@
+@prefix ns1: <http://example.org/> .
+@prefix ns2: <http://example.org/C%3A7/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:C%3Amin a owl:Class ;
+    rdfs:subClassOf ns1:MinorOn_Cm ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_C%3Amin ] .
+
+ns1:C%3Amin6 a owl:Class ;
+    rdfs:subClassOf ns1:MinorOn_Cm ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_C%3Amin6 ] .
+
+ns1:F a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F ] .
+
+ns1:F%3A7 a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3A7 ] .
+
+ns1:F%3Adim7 a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3Adim7 ] .
+
+ns1:F%3Amaj a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3Amaj ] .
+
+ns1:F%3Amin a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3Amin ] .
+
+ns1:F%3Aminmaj7 a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3Aminmaj7 ] .
+
+ns1:element_0 a ns1:C%3Amin7 ;
+    ns1:next ns1:element_1 .
+
+ns2:Bb a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://example.org/R_C%3A7/Bb> ] .
+
+ns1:Db a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_Db ] .
+
+ns1:F%3A7%28%2311%29 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3A7%28%2311%29 ] .
+
+ns1:F%3Amin7 a owl:Class ;
+    rdfs:subClassOf ns1:Off_F ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_F%3Amin7 ] .
+
+ns1:OnOffMinorIV_Cm a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_OnOffMinorIV_Cm ] .
+
+ns1:R_C%3Amin a owl:ObjectProperty .
+
+ns1:R_C%3Amin6 a owl:ObjectProperty .
+
+ns1:R_C%3Aminmaj7 a owl:ObjectProperty .
+
+ns1:R_F a owl:ObjectProperty .
+
+ns1:R_F%3A7 a owl:ObjectProperty .
+
+ns1:R_F%3Adim7 a owl:ObjectProperty .
+
+ns1:R_F%3Amaj a owl:ObjectProperty .
+
+ns1:R_F%3Amin a owl:ObjectProperty .
+
+ns1:R_F%3Amin7 a owl:ObjectProperty .
+
+ns1:R_F%3Aminmaj7 a owl:ObjectProperty .
+
+ns1:R_OnOffMinorIV_Cm a owl:ObjectProperty .
+
+ns1:R_SadCadence_Cm a owl:ObjectProperty .
+
+ns1:R_StraightCadence_Db a owl:ObjectProperty .
+
+ns1:R_VariableOne owl:propertyChainAxiom ( ns1:R_Eb%3Amin7 ns1:next ns1:R_Ab%3A7 ),
+        ( ns1:R_G%3A7 ns1:next ns1:R_C%3Amin7 ),
+        ( ns1:R_StraightApproach_Db ns1:next ns1:R_Db%3Amaj7 ),
+        ( ns1:R_StraightApproach_Db ns1:next ns1:R_Db ),
+        ( ns1:R_SadApproach_Cm ns1:next ns1:R_MinorOn_Cm ),
+        ( ns1:R_SadApproach_Cm ns1:next ns1:R_MinorOn_Cm ),
+        ( ns1:R_MinorOn_Cm ns1:next ns1:R_Off_F ),
+        ( ns1:R_D%3Ahdim7 ns1:next ns1:R_G%3A7 ),
+        ( ns1:R_Ab%3A7 ns1:next <http://example.org/R_C%3A7/Bb> ),
+        ( ns1:R_F%3A7%28%2311%29 ns1:next ns1:R_MinorPerfectCadence_Cm ),
+        ( ns1:R_Eb%3Amin7 ns1:next ns1:R_StraightApproach_C_0 ) .
+
+ns1:R_VariableTwo owl:propertyChainAxiom ( ns1:R_StraightApproach_C_0 [ owl:inverseOf ns1:next ] ns1:R_Eb%3Amin7 ),
+        ( ns1:R_MinorOn_Cm [ owl:inverseOf ns1:next ] ns1:R_SadApproach_Cm ),
+        ( ns1:R_G%3A7 [ owl:inverseOf ns1:next ] ns1:R_D%3Ahdim7 ),
+        ( <http://example.org/R_C%3A7/Bb> [ owl:inverseOf ns1:next ] ns1:R_Ab%3A7 ),
+        ( ns1:R_MinorOn_Cm [ owl:inverseOf ns1:next ] ns1:R_SadApproach_Cm ),
+        ( ns1:R_Ab%3A7 [ owl:inverseOf ns1:next ] ns1:R_Eb%3Amin7 ),
+        ( ns1:R_Db%3Amaj7 [ owl:inverseOf ns1:next ] ns1:R_StraightApproach_Db ),
+        ( ns1:R_MinorPerfectCadence_Cm [ owl:inverseOf ns1:next ] ns1:R_F%3A7%28%2311%29 ),
+        ( ns1:R_C%3Amin7 [ owl:inverseOf ns1:next ] ns1:R_G%3A7 ),
+        ( ns1:R_Off_F [ owl:inverseOf ns1:next ] ns1:R_MinorOn_Cm ),
+        ( ns1:R_Db [ owl:inverseOf ns1:next ] ns1:R_StraightApproach_Db ) .
+
+ns1:element_1 a ns1:F%3Amin7 ;
+    ns1:next ns1:element_2 .
+
+ns1:element_10 a ns1:C%3Aminmaj7 .
+
+ns1:element_2 a ns1:D%3Ahdim7 ;
+    ns1:next ns1:element_3 .
+
+ns1:element_3 a ns1:G%3A7 ;
+    ns1:next ns1:element_4 .
+
+ns1:element_4 a ns1:C%3Aminmaj7 ;
+    ns1:next ns1:element_5 .
+
+ns1:element_5 a ns1:Eb%3Amin7 ;
+    ns1:next ns1:element_6 .
+
+ns1:element_6 a ns1:Ab%3A7 ;
+    ns1:next ns1:element_7 .
+
+ns1:element_7 a ns1:Db%3Amaj7 ;
+    ns1:next ns1:element_8 .
+
+ns1:element_8 a ns1:D%3Ahdim7 ;
+    ns1:next ns1:element_9 .
+
+ns1:element_9 a ns1:G%3A7 ;
+    ns1:next ns1:element_10 .
+
+ns1:C%3Amin7 a owl:Class ;
+    rdfs:subClassOf ns1:MinorOn_Cm ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_C%3Amin7 ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_C%3Amin7 ] .
+
+ns1:C%3Aminmaj7 a owl:Class ;
+    rdfs:subClassOf ns1:MinorOn_Cm ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_C%3Aminmaj7 ] .
+
+ns1:Db%3Amaj7 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_Db%3Amaj7 ] .
+
+ns1:MinorPerfectCadence_Cm a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_MinorPerfectCadence_Cm ] .
+
+ns1:StraightApproach_C_0 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_StraightApproach_C_0 ] .
+
+ns1:StraightCadence_Db a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_StraightCadence_Db ] .
+
+ns1:Ab%3A7 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_Ab%3A7 ] .
+
+ns1:D%3Ahdim7 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_D%3Ahdim7 ] .
+
+ns1:Eb%3Amin7 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_Eb%3Amin7 ] .
+
+<http://example.org/R_C%3A7/Bb> a owl:ObjectProperty .
+
+ns1:R_D%3Ahdim7 a owl:ObjectProperty .
+
+ns1:R_Db a owl:ObjectProperty .
+
+ns1:R_Db%3Amaj7 a owl:ObjectProperty .
+
+ns1:R_F%3A7%28%2311%29 a owl:ObjectProperty .
+
+ns1:R_MinorPerfectCadence_Cm a owl:ObjectProperty .
+
+ns1:R_Off_F a owl:ObjectProperty .
+
+ns1:R_StraightApproach_C_0 a owl:ObjectProperty .
+
+ns1:SadApproach_Cm a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_SadApproach_Cm ] .
+
+ns1:SadCadence_Cm a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_SadCadence_Cm ] .
+
+ns1:G%3A7 a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_G%3A7 ] .
+
+ns1:R_C%3Amin7 a owl:ObjectProperty .
+
+ns1:StraightApproach_Db a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_StraightApproach_Db ] .
+
+ns1:R_Ab%3A7 a owl:ObjectProperty .
+
+ns1:R_Eb%3Amin7 a owl:ObjectProperty .
+
+ns1:R_G%3A7 a owl:ObjectProperty .
+
+ns1:R_SadApproach_Cm a owl:ObjectProperty .
+
+ns1:R_StraightApproach_Db a owl:ObjectProperty .
+
+ns1:MinorOn_Cm a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_MinorOn_Cm ] .
+
+ns1:R_MinorOn_Cm a owl:ObjectProperty .
+
+ns1:Off_F a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty ns1:R_Off_F ] .
+
+ns1:VariableOne a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty ns1:R_VariableOne ;
+            owl:someValuesFrom owl:Thing ] .
+
+ns1:VariableTwo a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty ns1:R_VariableTwo ;
+            owl:someValuesFrom owl:Thing ] .
+
+ns1:next a owl:FunctionalProperty .
+
+[] rdfs:subClassOf ns1:StraightApproach_C_0 ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:Ab%3A7 ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns2:Bb ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:StraightApproach_Db ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:Eb%3Amin7 ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:Ab%3A7 ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:StraightCadence_Db ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:StraightApproach_Db ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:Db%3Amaj7 ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:StraightApproach_Db ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:Eb%3Amin7 ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:StraightApproach_C_0 ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:SadCadence_Cm ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:SadApproach_Cm ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:MinorOn_Cm ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:OnOffMinorIV_Cm ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:MinorOn_Cm ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:Off_F ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:StraightCadence_Db ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:StraightApproach_Db ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:Db ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:SadCadence_Cm ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:F%3A7%28%2311%29 ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:MinorPerfectCadence_Cm ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:MinorPerfectCadence_Cm ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:G%3A7 ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:C%3Amin7 ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:SadApproach_Cm ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:D%3Ahdim7 ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:G%3A7 ns1:VariableTwo ) ] ) .
+
+[] rdfs:subClassOf ns1:SadCadence_Cm ;
+    owl:unionOf ( [ a owl:Class ;
+                owl:intersectionOf ( ns1:SadApproach_Cm ns1:VariableOne ) ] [ a owl:Class ;
+                owl:intersectionOf ( ns1:MinorOn_Cm ns1:VariableTwo ) ] ) .
+
+
