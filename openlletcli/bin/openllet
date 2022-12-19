@@ -1,0 +1,128 @@
+#!/bin/sh
+# ----------------------------------------------------------------------------
+#  Copyright 2001-2006 The Apache Software Foundation.
+#
+#  Licensed under the Apache License, Version 2.0 (the "License");
+#  you may not use this file except in compliance with the License.
+#  You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#  Unless required by applicable law or agreed to in writing, software
+#  distributed under the License is distributed on an "AS IS" BASIS,
+#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#  See the License for the specific language governing permissions and
+#  limitations under the License.
+# ----------------------------------------------------------------------------
+#
+#   Copyright (c) 2001-2006 The Apache Software Foundation.  All rights
+#   reserved.
+
+
+# resolve links - $0 may be a softlink
+PRG="$0"
+
+while [ -h "$PRG" ]; do
+  ls=`ls -ld "$PRG"`
+  link=`expr "$ls" : '.*-> \(.*\)$'`
+  if expr "$link" : '/.*' > /dev/null; then
+    PRG="$link"
+  else
+    PRG=`dirname "$PRG"`/"$link"
+  fi
+done
+
+PRGDIR=`dirname "$PRG"`
+BASEDIR=`cd "$PRGDIR/.." >/dev/null; pwd`
+
+# Reset the REPO variable. If you need to influence this use the environment setup file.
+REPO=
+
+
+# OS specific support.  $var _must_ be set to either true or false.
+cygwin=false;
+darwin=false;
+case "`uname`" in
+  CYGWIN*) cygwin=true ;;
+  Darwin*) darwin=true
+           if [ -z "$JAVA_VERSION" ] ; then
+             JAVA_VERSION="CurrentJDK"
+           else
+             echo "Using Java version: $JAVA_VERSION"
+           fi
+		   if [ -z "$JAVA_HOME" ]; then
+		      if [ -x "/usr/libexec/java_home" ]; then
+			      JAVA_HOME=`/usr/libexec/java_home`
+			  else
+			      JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/${JAVA_VERSION}/Home
+			  fi
+           fi       
+           ;;
+esac
+
+if [ -z "$JAVA_HOME" ] ; then
+  if [ -r /etc/gentoo-release ] ; then
+    JAVA_HOME=`java-config --jre-home`
+  fi
+fi
+
+# For Cygwin, ensure paths are in UNIX format before anything is touched
+if $cygwin ; then
+  [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --unix "$JAVA_HOME"`
+  [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --unix "$CLASSPATH"`
+fi
+
+# If a specific java binary isn't specified search for the standard 'java' binary
+if [ -z "$JAVACMD" ] ; then
+  if [ -n "$JAVA_HOME"  ] ; then
+    if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
+      # IBM's JDK on AIX uses strange locations for the executables
+      JAVACMD="$JAVA_HOME/jre/sh/java"
+    else
+      JAVACMD="$JAVA_HOME/bin/java"
+    fi
+  else
+    JAVACMD=`which java`
+  fi
+fi
+
+if [ ! -x "$JAVACMD" ] ; then
+  echo "Error: JAVA_HOME is not defined correctly." 1>&2
+  echo "  We cannot execute $JAVACMD" 1>&2
+  exit 1
+fi
+
+if [ -z "$REPO" ]
+then
+  REPO="$BASEDIR"/lib
+fi
+
+CLASSPATH="$BASEDIR"/etc:"$REPO"/openllet-owlapi-2.6.5.jar:"$REPO"/openllet-core-2.6.5.jar:"$REPO"/openllet-functions-2.6.5.jar:"$REPO"/openllet-query-2.6.5.jar:"$REPO"/antlr-runtime-3.5.3.jar:"$REPO"/owlapi-distribution-5.1.20.jar:"$REPO"/owlapi-compatibility-5.1.20.jar:"$REPO"/owlapi-apibinding-5.1.20.jar:"$REPO"/owlapi-api-5.1.20.jar:"$REPO"/javax.inject-1.jar:"$REPO"/owlapi-impl-5.1.20.jar:"$REPO"/owlapi-parsers-5.1.20.jar:"$REPO"/owlapi-oboformat-5.1.20.jar:"$REPO"/owlapi-tools-5.1.20.jar:"$REPO"/owlapi-rio-5.1.20.jar:"$REPO"/jackson-core-2.9.10.jar:"$REPO"/jackson-databind-2.9.10.jar:"$REPO"/jackson-annotations-2.9.10.jar:"$REPO"/commons-rdf-api-0.5.0.jar:"$REPO"/xz-1.6.jar:"$REPO"/jcl-over-slf4j-1.7.36.jar:"$REPO"/rdf4j-model-3.7.4.jar:"$REPO"/rdf4j-model-api-3.7.4.jar:"$REPO"/rdf4j-model-vocabulary-3.7.4.jar:"$REPO"/rdf4j-rio-api-3.7.4.jar:"$REPO"/rdf4j-rio-languages-3.7.4.jar:"$REPO"/rdf4j-rio-datatypes-3.7.4.jar:"$REPO"/rdf4j-rio-binary-3.7.4.jar:"$REPO"/rdf4j-rio-n3-3.7.4.jar:"$REPO"/rdf4j-rio-nquads-3.7.4.jar:"$REPO"/rdf4j-rio-ntriples-3.7.4.jar:"$REPO"/rdf4j-rio-rdfjson-3.7.4.jar:"$REPO"/rdf4j-rio-jsonld-3.7.4.jar:"$REPO"/httpclient-4.5.13.jar:"$REPO"/httpcore-4.4.13.jar:"$REPO"/httpclient-cache-4.5.13.jar:"$REPO"/rdf4j-rio-rdfxml-3.7.4.jar:"$REPO"/rdf4j-rio-trix-3.7.4.jar:"$REPO"/rdf4j-rio-turtle-3.7.4.jar:"$REPO"/rdf4j-rio-trig-3.7.4.jar:"$REPO"/rdf4j-rio-hdt-3.7.4.jar:"$REPO"/rdf4j-util-3.7.4.jar:"$REPO"/jsonld-java-0.12.3.jar:"$REPO"/httpclient-osgi-4.5.6.jar:"$REPO"/httpmime-4.5.6.jar:"$REPO"/fluent-hc-4.5.6.jar:"$REPO"/httpcore-osgi-4.4.10.jar:"$REPO"/httpcore-nio-4.4.10.jar:"$REPO"/hppcrt-0.7.5.jar:"$REPO"/caffeine-2.8.1.jar:"$REPO"/checker-qual-3.1.0.jar:"$REPO"/error_prone_annotations-2.3.4.jar:"$REPO"/guava-27.1-jre.jar:"$REPO"/failureaccess-1.0.1.jar:"$REPO"/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:"$REPO"/j2objc-annotations-1.1.jar:"$REPO"/animal-sniffer-annotations-1.17.jar:"$REPO"/jsr305-3.0.2.jar:"$REPO"/commons-io-2.6.jar:"$REPO"/jaxb-api-2.3.0.jar:"$REPO"/openllet-pellint-2.6.5.jar:"$REPO"/openllet-jena-2.6.5.jar:"$REPO"/jena-core-3.10.0.jar:"$REPO"/jena-iri-3.10.0.jar:"$REPO"/commons-cli-1.4.jar:"$REPO"/commons-codec-1.11.jar:"$REPO"/jena-base-3.10.0.jar:"$REPO"/commons-csv-1.5.jar:"$REPO"/commons-compress-1.17.jar:"$REPO"/collection-0.7.jar:"$REPO"/jena-arq-3.10.0.jar:"$REPO"/jena-shaded-guava-3.10.0.jar:"$REPO"/libthrift-0.17.0.jar:"$REPO"/commons-lang3-3.4.jar:"$REPO"/jgrapht-ext-1.1.0.jar:"$REPO"/jgrapht-core-1.1.0.jar:"$REPO"/jgrapht-io-1.1.0.jar:"$REPO"/antlr4-runtime-4.6.jar:"$REPO"/jgraphx-2.0.0.1.jar:"$REPO"/jgraph-5.13.0.0.jar:"$REPO"/openllet-modularity-2.6.5.jar:"$REPO"/openllet-explanation-2.6.5.jar:"$REPO"/slf4j-simple-1.7.36.jar:"$REPO"/slf4j-api-1.7.36.jar:"$REPO"/openllet-cli-2.6.5.jar
+
+ENDORSED_DIR=
+if [ -n "$ENDORSED_DIR" ] ; then
+  CLASSPATH=$BASEDIR/$ENDORSED_DIR/*:$CLASSPATH
+fi
+
+if [ -n "$CLASSPATH_PREFIX" ] ; then
+  CLASSPATH=$CLASSPATH_PREFIX:$CLASSPATH
+fi
+
+# For Cygwin, switch paths to Windows format before running java
+if $cygwin; then
+  [ -n "$CLASSPATH" ] && CLASSPATH=`cygpath --path --windows "$CLASSPATH"`
+  [ -n "$JAVA_HOME" ] && JAVA_HOME=`cygpath --path --windows "$JAVA_HOME"`
+  [ -n "$HOME" ] && HOME=`cygpath --path --windows "$HOME"`
+  [ -n "$BASEDIR" ] && BASEDIR=`cygpath --path --windows "$BASEDIR"`
+  [ -n "$REPO" ] && REPO=`cygpath --path --windows "$REPO"`
+fi
+
+exec "$JAVACMD" $JAVA_OPTS  \
+  -classpath "$CLASSPATH" \
+  -Dapp.name="openllet" \
+  -Dapp.pid="$$" \
+  -Dapp.repo="$REPO" \
+  -Dapp.home="$BASEDIR" \
+  -Dbasedir="$BASEDIR" \
+  openllet.Openllet \
+  "$@"
