@@ -65,7 +65,7 @@ def convert(grammar_mapping: Dict[str, str]) -> str:
   
   created_classes = list()
   for lhs_class, rhss in grammar_mapping.items():
-    lhs_class = urllib.parse.quote(lhs_class)
+    lhs_class = urllib.parse.quote_plus(lhs_class)
     lhs_rolified = f"R_{lhs_class}"
 
     if lhs_class not in created_classes:
@@ -75,7 +75,7 @@ def convert(grammar_mapping: Dict[str, str]) -> str:
           
     for rhs in rhss:
       # handle rhs
-      rhs = tuple(map(urllib.parse.quote, rhs.split(" ")))
+      rhs = tuple(map(urllib.parse.quote_plus, rhs.split(" ")))
       if len(rhs) == 1:
         terminal = rhs[0]
         if terminal not in created_classes:

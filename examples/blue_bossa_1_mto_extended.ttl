@@ -1,0 +1,745 @@
+@prefix ns1: <http://example.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.w3.org/2002/07/owl#> .
+
+[ rdf:type owl:Ontology ;
+   owl:imports <http://purl.org/ontology/mto/0.9>
+ ] .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/R_Db
+ns1:R_Db rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F
+ns1:R_F rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_MinorOn_Cm
+ns1:R_MinorOn_Cm rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_MinorPerfectCadence_Cm
+ns1:R_MinorPerfectCadence_Cm rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_Off_F
+ns1:R_Off_F rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_OnOffMinorIV_Cm
+ns1:R_OnOffMinorIV_Cm rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_SadApproach_Cm
+ns1:R_SadApproach_Cm rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_SadCadence_Cm
+ns1:R_SadCadence_Cm rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_StraightApproach_C_0
+ns1:R_StraightApproach_C_0 rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_StraightApproach_Db
+ns1:R_StraightApproach_Db rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_StraightCadence_Db
+ns1:R_StraightCadence_Db rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_VariableOne
+ns1:R_VariableOne rdf:type owl:ObjectProperty ;
+                  owl:propertyChainAxiom ( ns1:R_MinorOn_Cm
+                                           ns1:next
+                                           ns1:R_Off_F
+                                         ) ,
+                                         ( ns1:R_SadApproach_Cm
+                                           ns1:next
+                                           ns1:R_MinorOn_Cm
+                                         ) ,
+                                         ( ns1:R_StraightApproach_Db
+                                           ns1:next
+                                           ns1:R_Db
+                                         ) ,
+                                         ( ns1:R_StraightApproach_Db
+                                           ns1:next
+                                           <http://example.org/R_Db%3Amaj7>
+                                         ) ,
+                                         ( <http://example.org/R_Ab%3A7>
+                                           ns1:next
+                                           <http://example.org/R_C%3A7%2FBb>
+                                         ) ,
+                                         ( <http://example.org/R_D%3Ahdim7>
+                                           ns1:next
+                                           <http://example.org/R_G%3A7>
+                                         ) ,
+                                         ( <http://example.org/R_Eb%3Amin7>
+                                           ns1:next
+                                           ns1:R_StraightApproach_C_0
+                                         ) ,
+                                         ( <http://example.org/R_Eb%3Amin7>
+                                           ns1:next
+                                           <http://example.org/R_Ab%3A7>
+                                         ) ,
+                                         ( <http://example.org/R_F%3A7%28%2311%29>
+                                           ns1:next
+                                           ns1:R_MinorPerfectCadence_Cm
+                                         ) ,
+                                         ( <http://example.org/R_G%3A7>
+                                           ns1:next
+                                           <http://example.org/R_C%3Amin7>
+                                         ) .
+
+
+###  http://example.org/R_VariableTwo
+ns1:R_VariableTwo rdf:type owl:ObjectProperty ;
+                  owl:propertyChainAxiom ( ns1:R_Db
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           ns1:R_StraightApproach_Db
+                                         ) ,
+                                         ( ns1:R_MinorOn_Cm
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           ns1:R_SadApproach_Cm
+                                         ) ,
+                                         ( ns1:R_MinorPerfectCadence_Cm
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           <http://example.org/R_F%3A7%28%2311%29>
+                                         ) ,
+                                         ( ns1:R_Off_F
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           ns1:R_MinorOn_Cm
+                                         ) ,
+                                         ( ns1:R_StraightApproach_C_0
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           <http://example.org/R_Eb%3Amin7>
+                                         ) ,
+                                         ( <http://example.org/R_Ab%3A7>
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           <http://example.org/R_Eb%3Amin7>
+                                         ) ,
+                                         ( <http://example.org/R_C%3Amin7>
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           <http://example.org/R_G%3A7>
+                                         ) ,
+                                         ( <http://example.org/R_C%3A7%2FBb>
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           <http://example.org/R_Ab%3A7>
+                                         ) ,
+                                         ( <http://example.org/R_Db%3Amaj7>
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           ns1:R_StraightApproach_Db
+                                         ) ,
+                                         ( <http://example.org/R_G%3A7>
+                                           [ owl:inverseOf ns1:next
+                                           ]
+                                           <http://example.org/R_D%3Ahdim7>
+                                         ) .
+
+
+###  http://example.org/next
+ns1:next rdf:type owl:ObjectProperty ,
+                  owl:FunctionalProperty .
+
+
+###  http://example.org/R_Ab%3A7
+<http://example.org/R_Ab%3A7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_C%3Amin
+<http://example.org/R_C%3Amin> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_C%3Amin6
+<http://example.org/R_C%3Amin6> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_C%3Amin7
+<http://example.org/R_C%3Amin7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_C%3Aminmaj7
+<http://example.org/R_C%3Aminmaj7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_C%3A7%2FBb
+<http://example.org/R_C%3A7%2FBb> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_D%3Ahdim7
+<http://example.org/R_D%3Ahdim7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_Db%3Amaj7
+<http://example.org/R_Db%3Amaj7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_Eb%3Amin7
+<http://example.org/R_Eb%3Amin7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3A7
+<http://example.org/R_F%3A7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3Adim7
+<http://example.org/R_F%3Adim7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3Amaj
+<http://example.org/R_F%3Amaj> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3Amin
+<http://example.org/R_F%3Amin> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3Amin7
+<http://example.org/R_F%3Amin7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3Aminmaj7
+<http://example.org/R_F%3Aminmaj7> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_F%3A7%28%2311%29
+<http://example.org/R_F%3A7%28%2311%29> rdf:type owl:ObjectProperty .
+
+
+###  http://example.org/R_G%3A7
+<http://example.org/R_G%3A7> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/Db
+ns1:Db rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Restriction ;
+                             owl:onProperty ns1:R_Db ;
+                             owl:hasSelf "true"^^xsd:boolean
+                           ] ;
+       rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F
+ns1:F rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty ns1:R_F ;
+                            owl:hasSelf "true"^^xsd:boolean
+                          ] ;
+      rdfs:subClassOf ns1:Off_F ,
+                      <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/MinorOn_Cm
+ns1:MinorOn_Cm rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty ns1:R_MinorOn_Cm ;
+                                     owl:hasSelf "true"^^xsd:boolean
+                                   ] .
+
+
+###  http://example.org/MinorPerfectCadence_Cm
+ns1:MinorPerfectCadence_Cm rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty ns1:R_MinorPerfectCadence_Cm ;
+                                                 owl:hasSelf "true"^^xsd:boolean
+                                               ] ;
+                           rdfs:subClassOf <http://purl.org/ontology/mto/MinorProgression> .
+
+
+###  http://example.org/Off_F
+ns1:Off_F rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty ns1:R_Off_F ;
+                                owl:hasSelf "true"^^xsd:boolean
+                              ] .
+
+
+###  http://example.org/OnOffMinorIV_Cm
+ns1:OnOffMinorIV_Cm rdf:type owl:Class ;
+                    owl:equivalentClass [ rdf:type owl:Restriction ;
+                                          owl:onProperty ns1:R_OnOffMinorIV_Cm ;
+                                          owl:hasSelf "true"^^xsd:boolean
+                                        ] ;
+                    rdfs:subClassOf <http://purl.org/ontology/mto/MinorProgression> .
+
+
+###  http://example.org/SadApproach_Cm
+ns1:SadApproach_Cm rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                         owl:onProperty ns1:R_SadApproach_Cm ;
+                                         owl:hasSelf "true"^^xsd:boolean
+                                       ] ;
+                   rdfs:subClassOf <http://purl.org/ontology/mto/MinorProgression> .
+
+
+###  http://example.org/SadCadence_Cm
+ns1:SadCadence_Cm rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Restriction ;
+                                        owl:onProperty ns1:R_SadCadence_Cm ;
+                                        owl:hasSelf "true"^^xsd:boolean
+                                      ] ;
+                  rdfs:subClassOf <http://purl.org/ontology/mto/MinorProgression> .
+
+
+###  http://example.org/StraightApproach_C_0
+ns1:StraightApproach_C_0 rdf:type owl:Class ;
+                         owl:equivalentClass [ rdf:type owl:Restriction ;
+                                               owl:onProperty ns1:R_StraightApproach_C_0 ;
+                                               owl:hasSelf "true"^^xsd:boolean
+                                             ] .
+
+
+###  http://example.org/StraightApproach_Db
+ns1:StraightApproach_Db rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty ns1:R_StraightApproach_Db ;
+                                              owl:hasSelf "true"^^xsd:boolean
+                                            ] ;
+                        rdfs:subClassOf <http://purl.org/ontology/mto/MajorProgression> .
+
+
+###  http://example.org/StraightCadence_Db
+ns1:StraightCadence_Db rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Restriction ;
+                                             owl:onProperty ns1:R_StraightCadence_Db ;
+                                             owl:hasSelf "true"^^xsd:boolean
+                                           ] ;
+                       rdfs:subClassOf <http://purl.org/ontology/mto/MajorProgression> .
+
+
+###  http://example.org/VariableOne
+ns1:VariableOne rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty ns1:R_VariableOne ;
+                                      owl:someValuesFrom owl:Thing
+                                    ] .
+
+
+###  http://example.org/VariableTwo
+ns1:VariableTwo rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty ns1:R_VariableTwo ;
+                                      owl:someValuesFrom owl:Thing
+                                    ] .
+
+
+###  http://example.org/Ab%3A7
+<http://example.org/Ab%3A7> rdf:type owl:Class ;
+                            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                  owl:onProperty <http://example.org/R_Ab%3A7> ;
+                                                  owl:hasSelf "true"^^xsd:boolean
+                                                ] ;
+                            rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/C%3Amin
+<http://example.org/C%3Amin> rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://example.org/R_C%3Amin> ;
+                                                   owl:hasSelf "true"^^xsd:boolean
+                                                 ] ;
+                             rdfs:subClassOf ns1:MinorOn_Cm ,
+                                             <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/C%3Amin6
+<http://example.org/C%3Amin6> rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://example.org/R_C%3Amin6> ;
+                                                    owl:hasSelf "true"^^xsd:boolean
+                                                  ] ;
+                              rdfs:subClassOf ns1:MinorOn_Cm ,
+                                              <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/C%3Amin7
+<http://example.org/C%3Amin7> rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://example.org/R_C%3Amin7> ;
+                                                    owl:hasSelf "true"^^xsd:boolean
+                                                  ] ;
+                              rdfs:subClassOf ns1:MinorOn_Cm ,
+                                              <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/C%3Aminmaj7
+<http://example.org/C%3Aminmaj7> rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://example.org/R_C%3Aminmaj7> ;
+                                                       owl:hasSelf "true"^^xsd:boolean
+                                                     ] ;
+                                 rdfs:subClassOf ns1:MinorOn_Cm ,
+                                                 <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/C%3A7%2FBb
+<http://example.org/C%3A7%2FBb> rdf:type owl:Class ;
+                                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                      owl:onProperty <http://example.org/R_C%3A7%2FBb> ;
+                                                      owl:hasSelf "true"^^xsd:boolean
+                                                    ] ;
+                                rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/D%3Ahdim7
+<http://example.org/D%3Ahdim7> rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://example.org/R_D%3Ahdim7> ;
+                                                     owl:hasSelf "true"^^xsd:boolean
+                                                   ] ;
+                               rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/Db%3Amaj7
+<http://example.org/Db%3Amaj7> rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://example.org/R_Db%3Amaj7> ;
+                                                     owl:hasSelf "true"^^xsd:boolean
+                                                   ] ;
+                               rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/Eb%3Amin7
+<http://example.org/Eb%3Amin7> rdf:type owl:Class ;
+                               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <http://example.org/R_Eb%3Amin7> ;
+                                                     owl:hasSelf "true"^^xsd:boolean
+                                                   ] ;
+                               rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3A7
+<http://example.org/F%3A7> rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://example.org/R_F%3A7> ;
+                                                 owl:hasSelf "true"^^xsd:boolean
+                                               ] ;
+                           rdfs:subClassOf ns1:Off_F ,
+                                           <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3Adim7
+<http://example.org/F%3Adim7> rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://example.org/R_F%3Adim7> ;
+                                                    owl:hasSelf "true"^^xsd:boolean
+                                                  ] ;
+                              rdfs:subClassOf ns1:Off_F ,
+                                              <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3Amaj
+<http://example.org/F%3Amaj> rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://example.org/R_F%3Amaj> ;
+                                                   owl:hasSelf "true"^^xsd:boolean
+                                                 ] ;
+                             rdfs:subClassOf ns1:Off_F ,
+                                             <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3Amin
+<http://example.org/F%3Amin> rdf:type owl:Class ;
+                             owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://example.org/R_F%3Amin> ;
+                                                   owl:hasSelf "true"^^xsd:boolean
+                                                 ] ;
+                             rdfs:subClassOf ns1:Off_F ,
+                                             <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3Amin7
+<http://example.org/F%3Amin7> rdf:type owl:Class ;
+                              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <http://example.org/R_F%3Amin7> ;
+                                                    owl:hasSelf "true"^^xsd:boolean
+                                                  ] ;
+                              rdfs:subClassOf ns1:Off_F ,
+                                              <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3Aminmaj7
+<http://example.org/F%3Aminmaj7> rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <http://example.org/R_F%3Aminmaj7> ;
+                                                       owl:hasSelf "true"^^xsd:boolean
+                                                     ] ;
+                                 rdfs:subClassOf ns1:Off_F ,
+                                                 <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/F%3A7%28%2311%29
+<http://example.org/F%3A7%28%2311%29> rdf:type owl:Class ;
+                                      owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                            owl:onProperty <http://example.org/R_F%3A7%28%2311%29> ;
+                                                            owl:hasSelf "true"^^xsd:boolean
+                                                          ] ;
+                                      rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+###  http://example.org/G%3A7
+<http://example.org/G%3A7> rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty <http://example.org/R_G%3A7> ;
+                                                 owl:hasSelf "true"^^xsd:boolean
+                                               ] ;
+                           rdfs:subClassOf <http://purl.org/ontology/chord/Chord> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/element_0
+ns1:element_0 rdf:type owl:NamedIndividual ,
+                       <http://example.org/C%3Amin7> ;
+              ns1:next ns1:element_1 .
+
+
+###  http://example.org/element_1
+ns1:element_1 rdf:type owl:NamedIndividual ,
+                       <http://example.org/F%3Amin7> ;
+              ns1:next ns1:element_2 .
+
+
+###  http://example.org/element_10
+ns1:element_10 rdf:type owl:NamedIndividual ,
+                        <http://example.org/C%3Aminmaj7> .
+
+
+###  http://example.org/element_2
+ns1:element_2 rdf:type owl:NamedIndividual ,
+                       <http://example.org/D%3Ahdim7> ;
+              ns1:next ns1:element_3 .
+
+
+###  http://example.org/element_3
+ns1:element_3 rdf:type owl:NamedIndividual ,
+                       <http://example.org/G%3A7> ;
+              ns1:next ns1:element_4 .
+
+
+###  http://example.org/element_4
+ns1:element_4 rdf:type owl:NamedIndividual ,
+                       <http://example.org/C%3Aminmaj7> ;
+              ns1:next ns1:element_5 .
+
+
+###  http://example.org/element_5
+ns1:element_5 rdf:type owl:NamedIndividual ,
+                       <http://example.org/Eb%3Amin7> ;
+              ns1:next ns1:element_6 .
+
+
+###  http://example.org/element_6
+ns1:element_6 rdf:type owl:NamedIndividual ,
+                       <http://example.org/Ab%3A7> ;
+              ns1:next ns1:element_7 .
+
+
+###  http://example.org/element_7
+ns1:element_7 rdf:type owl:NamedIndividual ,
+                       <http://example.org/Db%3Amaj7> ;
+              ns1:next ns1:element_8 .
+
+
+###  http://example.org/element_8
+ns1:element_8 rdf:type owl:NamedIndividual ,
+                       <http://example.org/D%3Ahdim7> ;
+              ns1:next ns1:element_9 .
+
+
+###  http://example.org/element_9
+ns1:element_9 rdf:type owl:NamedIndividual ,
+                       <http://example.org/G%3A7> ;
+              ns1:next ns1:element_10 .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:Db
+                                       ns1:VariableTwo
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:StraightApproach_Db
+                                       ns1:VariableOne
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:StraightCadence_Db
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:MinorOn_Cm
+                                       ns1:VariableOne
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:Off_F
+                                       ns1:VariableTwo
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:OnOffMinorIV_Cm
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:MinorOn_Cm
+                                       ns1:VariableTwo
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:SadApproach_Cm
+                                       ns1:VariableOne
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:SadCadence_Cm
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:MinorPerfectCadence_Cm
+                                       ns1:VariableTwo
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableOne
+                                       <http://example.org/F%3A7%28%2311%29>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:SadCadence_Cm
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:StraightApproach_C_0
+                                       ns1:VariableTwo
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableOne
+                                       <http://example.org/Eb%3Amin7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:StraightApproach_Db
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:StraightApproach_Db
+                                       ns1:VariableOne
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableTwo
+                                       <http://example.org/Db%3Amaj7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:StraightCadence_Db
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:VariableOne
+                                       <http://example.org/Ab%3A7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableTwo
+                                       <http://example.org/C%3A7%2FBb>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:StraightApproach_C_0
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:VariableOne
+                                       <http://example.org/D%3Ahdim7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableTwo
+                                       <http://example.org/G%3A7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:SadApproach_Cm
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:VariableOne
+                                       <http://example.org/Eb%3Amin7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableTwo
+                                       <http://example.org/Ab%3A7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:StraightApproach_Db
+] .
+
+
+[ rdf:type owl:Class ;
+  owl:unionOf ( [ owl:intersectionOf ( ns1:VariableOne
+                                       <http://example.org/G%3A7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+                [ owl:intersectionOf ( ns1:VariableTwo
+                                       <http://example.org/C%3Amin7>
+                                     ) ;
+                  rdf:type owl:Class
+                ]
+              ) ;
+  rdfs:subClassOf ns1:MinorPerfectCadence_Cm
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
