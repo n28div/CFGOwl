@@ -27,9 +27,9 @@ def convert(sequence: str) -> str:
   sequence = sequence.split(" ")
   created_classes = list()
   for i, (s_i, s_n) in enumerate(pairwise(sequence)):
-    s_i_class = NS[urllib.parse.quote(s_i)]
+    s_i_class = NS[urllib.parse.quote_plus(s_i)]
     uri_s_i = NS[urllib.parse.quote_plus(f"element_{i}")]
-    s_n_class = NS[urllib.parse.quote(s_n)]
+    s_n_class = NS[urllib.parse.quote_plus(s_n)]
     uri_s_n = NS[urllib.parse.quote_plus(f"element_{i + 1}")]
 
     if s_i not in created_classes:
