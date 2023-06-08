@@ -96,7 +96,7 @@ examples/blue_bossa_example.ttl:38 | <http://w3id.org/cfgowl/F%3Amin7> a <http:/
 
 ## Acknowledgments
 
-<a href="https://polifonia-project.eu"><img src="https://polifonia-project.eu/wp-content/uploads/2021/01/logo-polifonia.svg" style="width:200px;"></a>
+<a href="https://polifonia-project.eu"><img src="assets/polifonia.jpg" style="width:200px;"></a>
 
 This project has received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No 101004746.
 
