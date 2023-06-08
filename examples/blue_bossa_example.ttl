@@ -1,0 +1,541 @@
+@prefix ns1: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://w3id.org/cfgowl/Ab%3A7> a <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/Db:maj7> .
+
+<http://w3id.org/cfgowl/C%3Amin7> a <http://w3id.org/cfgowl/on_off_minor_iv_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/F:min7> .
+
+<http://w3id.org/cfgowl/C%3Aminmaj7> a <http://w3id.org/cfgowl/start> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/Eb:min7> .
+
+<http://w3id.org/cfgowl/D%3Ahdim7> a <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/G:7> .
+
+<http://w3id.org/cfgowl/DB> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27DB%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_DB> ] .
+
+<http://w3id.org/cfgowl/Db%3Amaj7> a <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/D:hdim7> .
+
+<http://w3id.org/cfgowl/Eb%3Amin7> a <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/Ab:7> .
+
+<http://w3id.org/cfgowl/F%3Amin7> a <http://w3id.org/cfgowl/on_off_minor_iv_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/D:hdim7> .
+
+<http://w3id.org/cfgowl/G%3A7> a <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    ns1:directlyFollows <http://w3id.org/cfgowl/C:minmaj7> .
+
+<http://w3id.org/cfgowl/MINOR_ON_CM> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27MINOR_ON_CM%27%29>,
+        <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_MINOR_ON_CM> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_MINOR_ON_CM> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_MINOR_ON_CM> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_MINOR_ON_CM> ] .
+
+<http://w3id.org/cfgowl/OFF_F> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27OFF_F%27%29>,
+        <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_OFF_F> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_OFF_F> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_OFF_F> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_OFF_F> ] .
+
+<http://w3id.org/cfgowl/VariableOne> a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty <http://w3id.org/cfgowl/R_VariableOne> ;
+            owl:someValuesFrom owl:Thing ] .
+
+<http://w3id.org/cfgowl/VariableTwo> a owl:Class ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:onProperty <http://w3id.org/cfgowl/R_VariableTwo> ;
+            owl:someValuesFrom owl:Thing ] .
+
+<http://w3id.org/cfgowl/__ANON_0> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_0%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_0> ] .
+
+<http://w3id.org/cfgowl/__ANON_1> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_1%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_1> ] .
+
+<http://w3id.org/cfgowl/__ANON_2> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_2%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_2> ] .
+
+<http://w3id.org/cfgowl/__ANON_3> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_3%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_3> ] .
+
+<http://w3id.org/cfgowl/__ANON_4> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_4%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_4> ] .
+
+<http://w3id.org/cfgowl/__ANON_5> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_5%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_5> ] .
+
+<http://w3id.org/cfgowl/__ANON_6> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_6%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_6> ] .
+
+<http://w3id.org/cfgowl/__ANON_7> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_7%27%29> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___ANON_7> ] .
+
+ns1:directlyPrecedes owl:inverseOf ns1:directlyFollows .
+
+<http://w3id.org/cfgowl/Ab:7> a <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db>,
+        <http://w3id.org/cfgowl/straight_cadence_db> .
+
+<http://w3id.org/cfgowl/C:minmaj7> a <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> .
+
+<http://w3id.org/cfgowl/Db:maj7> a <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_cadence_db> .
+
+<http://w3id.org/cfgowl/Eb:min7> a <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db>,
+        <http://w3id.org/cfgowl/straight_cadence_db> .
+
+<http://w3id.org/cfgowl/F:min7> a <http://w3id.org/cfgowl/on_off_minor_iv_cm>,
+        <http://w3id.org/cfgowl/start> .
+
+<http://w3id.org/cfgowl/G:7> a <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> .
+
+<http://w3id.org/cfgowl/R_DB> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_0> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_1> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_2> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_3> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_4> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_5> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_6> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___ANON_7> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___start_plus_0> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_on_off_minor_iv_cm> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_rule> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_sad_cadence_cm> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_start> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_straight_approach_db> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_straight_cadence_db> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27DB%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27DB%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27DB%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27DB%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27MINOR_ON_CM%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/on_off_minor_iv_cm>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27MINOR_ON_CM%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27MINOR_ON_CM%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27MINOR_ON_CM%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27OFF_F%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/on_off_minor_iv_cm>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27OFF_F%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27OFF_F%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_0%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_0%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_0%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_0%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_1%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/minor_perfect_cadence_cm>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_2%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/minor_perfect_cadence_cm>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_2%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_2%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_2%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_2%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_2%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_3%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_c0>,
+        <http://w3id.org/cfgowl/straight_approach_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_3%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_3%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_3%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_3%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_4%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_c0> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_4%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_4%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_4%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_5%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_6%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_6%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_6%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_6%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_6%27%29> ] .
+
+<http://w3id.org/cfgowl/__T_Terminal%28%27__ANON_7%27%29> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_7%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_7%27%29> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_7%27%29> ] .
+
+ns1:directlyFollows a owl:FunctionalProperty .
+
+<http://w3id.org/cfgowl/D:hdim7> a <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27OFF_F%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_sad_approach_cm> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/minor_perfect_cadence_cm> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_minor_perfect_cadence_cm> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_minor_perfect_cadence_cm> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_minor_perfect_cadence_cm> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_minor_perfect_cadence_cm> ] .
+
+<http://w3id.org/cfgowl/straight_approach_c0> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_straight_approach_c0> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_straight_approach_c0> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_straight_approach_c0> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_straight_approach_c0> ] .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27DB%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27MINOR_ON_CM%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_0%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_4%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_7%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_MINOR_ON_CM> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_OFF_F> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_3%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_6%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_minor_perfect_cadence_cm> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R_straight_approach_c0> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_2%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/on_off_minor_iv_cm> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/on_off_minor_iv_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_on_off_minor_iv_cm> ] .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_5%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/sad_approach_cm> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/sad_approach_cm>,
+        <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_sad_approach_cm> ],
+        [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_sad_approach_cm> ] .
+
+<http://w3id.org/cfgowl/straight_approach_db> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/rule>,
+        <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_approach_db>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_straight_approach_db> ] .
+
+<http://w3id.org/cfgowl/R___T_Terminal%28%27__ANON_1%27%29> a owl:ObjectProperty .
+
+<http://w3id.org/cfgowl/sad_cadence_cm> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/sad_cadence_cm>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_sad_cadence_cm> ] .
+
+<http://w3id.org/cfgowl/straight_cadence_db> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/start>,
+        <http://w3id.org/cfgowl/straight_cadence_db> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_straight_cadence_db> ] .
+
+<http://w3id.org/cfgowl/rule> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_rule> ] .
+
+<http://w3id.org/cfgowl/__start_plus_0> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/__start_plus_0>,
+        <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R___start_plus_0> ] .
+
+<http://w3id.org/cfgowl/start> a owl:Class ;
+    rdfs:subClassOf <http://w3id.org/cfgowl/start> ;
+    owl:equivalentClass [ a owl:Restriction ;
+            owl:hasSelf true ;
+            owl:onProperty <http://w3id.org/cfgowl/R_start> ] .
+
+

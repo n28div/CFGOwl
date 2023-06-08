@@ -1,0 +1,29 @@
+start: rule+
+
+?rule: on_off_minor_iv_cm
+     | MINOR_ON_CM
+     | OFF_F 
+     | sad_cadence_cm 
+     | sad_approach_cm 
+     | minor_perfect_cadence_cm
+     | straight_cadence_db
+     | straight_approach_db
+     | straight_approach_c0
+
+MINOR_ON_CM: "C:min" | "C:minmaj7" | "C:min6" | "C:min7" 
+OFF_F: "F:7" | "F" | "F:maj" | "F:min" | "F:min7" | "F:minmaj7" | "F:dim7" 
+sad_approach_cm: "D:hdim7" "G:7" 
+minor_perfect_cadence_cm: "G:7" "C:min7" 
+straight_approach_c0: "Ab:7" "C:7/Bb"
+straight_approach_db: "Eb:min7" straight_approach_c0 
+                   | "Eb:min7" "Ab:7" 
+sad_cadence_cm: sad_approach_cm  MINOR_ON_CM 
+             | sad_approach_cm  MINOR_ON_CM 
+             | "F:7(#11)" minor_perfect_cadence_cm 
+on_off_minor_iv_cm: MINOR_ON_CM OFF_F 
+straight_cadence_db: straight_approach_db "Db" 
+                   | straight_approach_db "Db:maj7" 
+
+
+// Disregard spaces in text
+%ignore " "
