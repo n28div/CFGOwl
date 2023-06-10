@@ -2,11 +2,20 @@
 
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
-CFGOwl is a tool to convert Context Free Grammars to OWL ontologies. The tool make use of grammars formalised using [Lark](https://github.com/lark-parser/lark).
+**CFGOwl** is a tool to convert *Context Free Grammars* to *OWL ontologies*. The tool make use of grammars formalised using [Lark](https://github.com/lark-parser/lark).
 Further information on the conversion formalisation are defined in [Classifying Sequences by Combining Context-Free Grammars and OWL Ontologies](https://link.springer.com/chapter/10.1007/978-3-031-33455-9_10).
 
 
 ## Usage
+
+* Install pre-requisites:
+  * Python 3+
+  * Python packages: `pip install -r ./requirements.txt`
+* Implement your grammar (see *Example* below),
+* Run the `cfgowl.py` script (e.g. `python cfgowl.py`) for translating the grammar and classifying a sequence.
+
+Command line interface:
+
 ```
 usage: cfgowl.py [-h] --grammar GRAMMAR [--format {json-ld,n3,nquads,nt,hext,xml,turtle,trig,trix}] [--sequence SEQUENCE] [--namespace NAMESPACE] [--next-iri NEXT_IRI]
                  [--previous-iri PREVIOUS_IRI] [--disable-cfg-axioms]
@@ -31,7 +40,7 @@ options:
 
 ## Example
 
-In the file [examples/blue_bossa_example.lark](examples/blue_bossa_example.lark) the example on the tune Blue Bossa by Kenny Dorham is reported.
+In the file [examples/blue_bossa_example.lark](examples/blue_bossa_example.lark) the example on the tune *Blue Bossa* by Kenny Dorham is reported.
 
 Parsing the sequence
 
@@ -64,7 +73,7 @@ start
 
 The elements `C:min7` and `F:min7` are classified as `on_off_minor_iv_cm`.
 
-The sequence can be classified using the command
+The sequence can be classified using the command:
 
 ```
 python cfgowl.py -g examples/blue_bossa_example.lark -s 'C:min7 F:min7 D:hdim7 G:7 C:minmaj7 Eb:min7 Ab:7 Db:maj7 D:hdim7 G:7 C:minmaj7' -f turtle
@@ -72,7 +81,7 @@ python cfgowl.py -g examples/blue_bossa_example.lark -s 'C:min7 F:min7 D:hdim7 G
 
 which outputs the ontology [examples/blue_bossa_example.ttl](examples/blue_bossa_example.ttl) in turtle format.
 
-The classification of `C:min7` and `F:min7` can be found in the triples
+The classification of `C:min7` and `F:min7` can be found in the triples:
 
 ```
 examples/blue_bossa_example.ttl:11 | <http://w3id.org/cfgowl/C%3Amin7> a <http://w3id.org/cfgowl/on_off_minor_iv_cm>
@@ -82,6 +91,7 @@ examples/blue_bossa_example.ttl:38 | <http://w3id.org/cfgowl/F%3Amin7> a <http:/
 *`C%3Amin7` and `F%3Amin7` are `C:min7` and `F:min7` encoded as URL*.
 
 ## Authors and attribution
+
 ```
 @inproceedings{lazzari2023classifying,
   title={Classifying sequences by combining context-free grammars and OWL ontologies},
