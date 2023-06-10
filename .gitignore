@@ -1,2 +1,5 @@
 .docker/stardog/
 __pycache__
+
+# IntelliJ IDE
+.idea
